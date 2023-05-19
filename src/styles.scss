@@ -1,1 +1,129 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@include mat.core();
+$sosciemats-primary: mat.define-palette(mat.$indigo-palette);
+$sosciemats-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$sosciemats-warn: mat.define-palette(mat.$red-palette);
+$sosciemats-theme: mat.define-light-theme((color: (primary: $sosciemats-primary,
+        accent: $sosciemats-accent,
+        warn: $sosciemats-warn,
+      )));
+@include mat.all-component-themes($sosciemats-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #fafdfd;
+  overflow-y: scroll;
+}
+
+.fixed-toolbar {
+  position: fixed;
+  top: 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-icons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 8px;
+}
+
+.banner-image {
+  height: 30vh;
+  width: 100%;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("/assets/media/images/front-baner.jpg");
+}
+
+.banner-image-login {
+  height: 30vh;
+  width: 100%;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center center;
+  background-image: url("/assets/media/images/login-baner.jpg");
+}
+
+.container {
+  max-width: 1200px;
+  margin: 16px auto 0 auto;
+  padding: 0 4px 0 4px;
+}
+
+.card-primary {
+  background-color: #ffeed9;
+  color: #271900;
+}
+
+section {
+  margin: 16px auto 0 auto;
+  padding: 16px;
+  border-radius: 16px;
+
+  .content-header {
+    color: #1f1b16;
+    font-weight: 300;
+    font-size: 24px;
+    padding: 4px 0 16px 16px;
+  }
+
+  .content {
+    padding: 0 4px 0 4px;
+  }
+
+  .content-footer {
+    padding: 16px 0 0 0;
+    text-align: right;
+  }
+
+  .content-footer-centered {
+    padding: 16px 0 0 0;
+    text-align: center;
+  }
+}
+
+.error-text {
+  color: #ba1a1a;
+}
+
+.main-footer {
+  background-color: #667e5a;
+  color: white;
+  height: auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  padding: 16px 0 16px 0;
+}
+
+@media only screen and (min-width: 1200px) {
+  .footer-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 16px 0 16px 0;
+  }
+}
+
+.card-login {
+  background-color: #eae1d9;
+  color: #271900;
+}
+
+.login-form {
+  display: grid;
+  grid-template-rows: auto auto;
+  max-width: 350px;
+  margin: 0 auto 0 auto;
+}

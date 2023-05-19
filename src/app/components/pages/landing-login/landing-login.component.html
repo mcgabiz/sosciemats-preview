@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="banner-image-login"></div>
+  <section class="card-login">
+    <div class="content-header">Autorizācija</div>
+    <div class="content">
+      <form class="login-form" (ngSubmit)="RedirectAfretLogin()">
+        <mat-form-field>
+          <mat-label>Lietotāja vārds</mat-label>
+          <input type="text" matInput placeholder="Vislabākā lietotāja vārds" [(ngModel)]="login" name="login" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Parole</mat-label>
+          <input type="password" matInput placeholder="Super slepena parole" [(ngModel)]="password" name="password" />
+        </mat-form-field>
+        <button mat-raised-button color="primary">Autorizēties</button>
+      </form>
+    </div>
+    <div class="content-footer-centered error-text"><span>{{message}}</span></div>
+  </section>
+</div>
+<div class="spacer"></div>
